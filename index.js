@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 
 const authorRoutes = require('./routes/author')
-
+const bookRoutes = require('./routes/book')
 
 const app = express()
 const port = 3005
@@ -11,6 +11,7 @@ const port = 3005
 app.set('port',port)
 app.use(express.json())
 app.use('/api/author',authorRoutes)
+app.use('/api/book',bookRoutes)
 
 app.get('/',(req,res) => {
     res.send('Hola Mundo')
