@@ -39,6 +39,10 @@ const controllerBook = {
     updateBook: async (req,res) =>{
         try {
             const {id} = req.params
+            const title = req.body.title
+            const author = req.body.author
+            const summary = req.body.summary
+            const isbn = req.body.isbn
             await Book.findByIdAndUpdate(id,
                 {
                     title:title,
